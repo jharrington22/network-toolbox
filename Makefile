@@ -29,3 +29,7 @@ build:
 push:
 	docker push $(IMAGE_URI)
 	docker push $(IMAGE_URI_LATEST)
+
+.PHONY: login
+login:
+	docker login -u "$$QUAY_BOT_USERNAME" --password "$$QUAY_BOT_PASSWORD" quay.io

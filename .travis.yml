@@ -1,0 +1,16 @@
+language: generic
+
+services:
+    - docker
+
+before_install:
+    - make login
+
+script:
+    - make build
+
+deploy:
+    provider: script
+    script: make push 
+    on:
+        branch: master
